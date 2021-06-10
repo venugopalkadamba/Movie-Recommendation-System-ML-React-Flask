@@ -227,6 +227,25 @@ docker run -d -p 5000:5000 <PREVIOUSLY ENTERED TAG NAME>
 
 After execution of the above command you can notice the Flask API running at http://localhost:5000
 
+## Tech Stack Used
+
+<div align="center">
+
+<table>
+    <tr>
+        <td><img src="./readme_assets/react.png" width="200px" height="200px" /></td>
+        <td><img src="./readme_assets/firebase.png" width="200px" height="200px" /></td>
+        <td><img src="./readme_assets/docker.png" width="200px" height="200px" /></td>
+    </tr>
+    <tr>
+        <td><img src="./readme_assets/flask.png" width="200px" height="200px" /></td>
+        <td><img src="./readme_assets/gunicorn.png" width="200px" height="200px" /></td>
+        <td><img src="./readme_assets/heroku.jpg" width="200px" height="200px" /></td>
+    </tr>
+</table>
+
+</div>
+
 ## Referred Article Links
 
 For Movie Recommendation System
