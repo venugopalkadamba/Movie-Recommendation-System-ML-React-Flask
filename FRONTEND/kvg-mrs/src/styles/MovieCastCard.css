@@ -1,0 +1,31 @@
+.cast_card {
+  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 15px;
+  background-color: #424242;
+  border-radius: 8px;
+  box-shadow: 0 0 10px whitesmoke;
+  transition-duration: 0.2s;
+}
+
+.cast_card:hover {
+  box-shadow: 0 0 15px rgb(158, 69, 172);
+}
+
+.cast_card__image {
+  width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.cast_card__content {
+  padding: 10px;
+  text-align: center;
+}
+
+.cast_card__overview {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}

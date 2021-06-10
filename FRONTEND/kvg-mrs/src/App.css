@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Mate+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  transition-duration: 0.8s;
+}
+
+.title {
+  font-family: "Mate SC", serif;
+}
+
+body {
+  background-color: #121212;
+  /* background-image: url("./background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #121212; */
+}
+
+.app {
+  color: #fff;
+}
+
+.app__search_container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.about_application_content {
+  padding: 25px;
+  max-width: 650px;
+  margin: 0px 10px 40px 10px;
+  text-align: justify;
+  border: 2px solid black;
+  border-radius: 6px;
+  box-shadow: 0 0 8px gray;
+  font-size: 20px;
+  font-family: "Bodoni Moda", serif;
+}
+
+.search_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-around;
+  width: 500px;
+  padding: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.search_input {
+  margin-top: 10px !important;
+  font-family: "Mate SC", serif;
+  background-color: whitesmoke !important;
+  padding: 15px;
+  border: none;
+  font-size: 22px;
+  text-align: center;
+  transition: 0.3s;
+  font-weight: bolder;
+}
+
+.search_input:hover {
+  box-shadow: 0 0 8px violet;
+}
+
+.search_button {
+  font-size: 18px !important;
+  margin-top: 10px !important;
+}
+
+.suggestion_container {
+  z-index: 10;
+  margin-top: -53px;
+}
+
+.suggestion {
+  background-color: white;
+  color: black;
+  font-family: "Bodoni Moda", serif;
+  border: 1px solid black;
+  font-weight: bolder;
+  border-radius: 2px;
+  padding: 8px;
+  transition-duration: 0.6s;
+  text-align: center;
+}
+
+.suggestion:hover {
+  cursor: pointer;
+  background-color: rgb(219, 221, 221);
+}
+
+.recommendation_row {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 20px 20px 20px 0;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.recommendation_row::-webkit-scrollbar {
+  width: 1em;
+}
+
+.recommendation_row::-webkit-scrollbar-track {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.recommendation_row::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: grey;
+}
+
+.recommendation_row::-webkit-scrollbar:vertical {
+  display: none;
+}
+
+.input_movie_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input_movie_card {
+  display: flex;
+  margin: 20px;
+  max-width: 900px;
+  box-shadow: 0 0 10px gray;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #424242;
+  font-family: "Bodoni Moda", serif;
+}
+
+.input_poster {
+  width: 45%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.card_content {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-right: 8px;
+  padding-bottom: 15px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.card_overview {
+  text-align: justify;
+}
+
+.card_title {
+  color: #fff;
+}
+
+.cast_data_cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.reviews_container {
+  display: flex;
+  width: 100%;
+  background-color: #121212 !important;
+  justify-content: center;
+}
+
+.review_content_container {
+  width: 100%;
+  height: 60px;
+  overflow-y: scroll;
+}
+
+.review_content_container::-webkit-scrollbar {
+  display: none;
+}
+
+.table__row_content {
+  color: #fff !important;
+  text-align: justify !important;
+  font-family: "Bodoni Moda", serif;
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+  .input_movie_card {
+    flex-direction: column;
+  }
+  .input_poster {
+    width: 100%;
+    height: 450px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+  }
+}

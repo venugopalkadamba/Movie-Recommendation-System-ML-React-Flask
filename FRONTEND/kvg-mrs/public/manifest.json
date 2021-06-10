@@ -1,0 +1,15 @@
+{
+  "short_name": "KVG Movie Zone",
+  "name": "KVG Movie Zone",
+  "icons": [
+    {
+      "src": "assets/kvg_mrs_logo.png",
+      "type": "image/png",
+      "sizes": "500x500"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
