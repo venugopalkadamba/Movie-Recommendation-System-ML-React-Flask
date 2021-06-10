@@ -233,3 +233,7 @@ After execution of the above command you can notice the Flask API running at htt
 2. movies_metadata.csv and credits.csv from [Movies Dataset](https://www.kaggle.com/rounakbanik/the-movies-dataset)
 3. Remaining Datasets are generated using `MovieRecommendationDatasetPreparation.ipynb` in `MovieRecommendationCodes folder`
 4. [IMDB 50k Movie Reviews Dataset](https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews)
+
+<div align="center">
+<b>Please do ⭐ this repo if you liked my work</b>
+</div>
