@@ -163,7 +163,7 @@ The API will be running at http://127.0.0.1:5000/
 7. Building the Image:
 
 ```
-docker build -t <ENTER YOUR OWN TAG NAME> .
+docker build -t ENTER_YOUR_OWN_TAG_NAME .
 ```
 
 It will take some time for the execution of the above command. After execution of the above command you can see the docker image details using the following command:
@@ -188,19 +188,19 @@ heroku container:login
 11. Create a app in heroku:
 
 ```
-heroku create <YOUR_APP_NAME>
+heroku create YOUR_APP_NAME
 ```
 
 11. Pushing the docker image into heroku:
 
 ```
-heroku container:push web --app <YOUR_APP_NAME>
+heroku container:push web --app YOUR_APP_NAME
 ```
 
 12. Releasing the web app:
 
 ```
-heroku container:release web --app <YOUR_APP_NAME>
+heroku container:release web --app YOUR_APP_NAME
 ```
 
 That's it, you can see your API running at `https://YOUR_APP_NAME.herokuapp.com/`
@@ -216,13 +216,13 @@ That's it, you can see your API running at `https://YOUR_APP_NAME.herokuapp.com/
 7. Building the Image:
 
 ```
-docker build -t <ENTER YOUR OWN TAG NAME> .
+docker build -t ENTER_YOUR_OWN_TAG_NAME .
 ```
 
 8. Run the docker container:
 
 ```
-docker run -d -p 5000:5000 <PREVIOUSLY ENTERED TAG NAME>
+docker run -d -p 5000:5000 PREVIOUSLY_ENTERED_TAG_NAME
 ```
 
 After execution of the above command you can notice the Flask API running at http://localhost:5000
