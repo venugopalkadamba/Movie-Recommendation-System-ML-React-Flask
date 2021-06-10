@@ -1,10 +1,10 @@
 <div align="center">
 
 <h1>Movie Recomendation System with Sentiment Analysis</h1>
-<img src="https://img.shields.io/badge/Python-3.7.3-blue" />
-<img src="https://img.shields.io/badge/Frontend-ReactJS-green" />
-<img src="https://img.shields.io/badge/BackendAPI-Flask-green" />
-<img src="https://img.shields.io/badge/OtherAPI-TMDB-green" />
+<img src="https://img.shields.io/badge/Python-3.7.3-brown" />
+<img src="https://img.shields.io/badge/Frontend-ReactJS-orange" />
+<img src="https://img.shields.io/badge/BackendAPI-Flask-yellow" />
+<img src="https://img.shields.io/badge/OtherAPI-TMDB-red" />
 <img src="https://img.shields.io/badge/Deployment-Heroku-blue" />
 </div>
 
@@ -12,7 +12,7 @@
 
 <b>KVG Movie Zone</b> is an AI based web application in which you can search for any Hollywood Movie. This application will provide all the information related to that movie, does <b>sentiment analysis</b> on the movie reviews and the most interesting part, this application will provide you the top 10 <b>movie recommendations</b> based on your search.<br/>
 
-<b>ReactJS</b> was used for frontend and a <b>Flask API</b> was deployed using <b>Docker</b> container on <b>Heroku</b> to serve the machine learning models to the Frontend.
+<b>ReactJS</b> was used for frontend which was deployed using <b>firebase hosting</b> and a <b>Flask API</b> was deployed using <b>Docker</b> container on <b>Heroku</b> to serve the machine learning models to the Frontend.
 
 This application uses <b>Content Based Movie Recommendation</b> to recommend movies to the user.<b>TMDB</b> API was used to retrieve all the information related to the movie and its cast. <b>Web Scraping</b> was done on <b>IMDB</b> website to get the reviews related to the searched movie. Sentiments analysis is done using a machine learning model trained on a sample of IMDB Dataset.<br/>
 
@@ -226,6 +226,21 @@ docker run -d -p 5000:5000 <PREVIOUSLY ENTERED TAG NAME>
 ```
 
 After execution of the above command you can notice the Flask API running at http://localhost:5000
+
+## Referred Article Links
+
+For Movie Recommendation System
+
+1. [Article 1](https://towardsdatascience.com/how-to-build-from-scratch-a-content-based-movie-recommender-with-natural-language-processing-25ad400eb243)
+2. [Article 2](https://analyticsindiamag.com/how-to-build-a-content-based-movie-recommendation-system-in-python/)
+
+For Deployment Using Dockers
+
+1. [Article 1](https://medium.com/analytics-vidhya/dockerize-your-python-flask-application-and-deploy-it-onto-heroku-650b7a605cc9)
+2. [Article 2](https://pythonise.com/series/learning-flask/building-a-flask-app-with-docker-compose)
+3. [Article 3](https://betterprogramming.pub/create-a-running-docker-container-with-gunicorn-and-flask-dcd98fddb8e0)
+4. [Article 4](https://itnext.io/setup-flask-project-using-docker-and-gunicorn-4dcaaa829620)
+5. [Article 5](https://philchen.com/2019/07/09/a-scalable-flask-application-using-gunicorn-on-ubuntu-18-04-in-docker)
 
 ## Dataset Links
 
