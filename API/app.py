@@ -1,9 +1,3 @@
-from nltk.stem import WordNetLemmatizer
-from nltk.corpus import stopwords
-from tmdbv3api import TMDb
-from tmdbv3api import Movie
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
 import os
 import re
 import json
@@ -16,6 +10,14 @@ from bs4 import BeautifulSoup
 
 from flask import Flask, app, request
 from flask_cors import CORS, cross_origin
+
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import stopwords
+from tmdbv3api import TMDb
+from tmdbv3api import Movie
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
 
 nltk.download("stopwords")
 nltk.download("wordnet")
