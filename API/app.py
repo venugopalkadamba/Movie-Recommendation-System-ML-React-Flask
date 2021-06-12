@@ -2,6 +2,7 @@ import os
 import re
 import json
 import nltk
+import difflib
 import urllib
 import pickle
 import numpy as np
@@ -132,38 +133,51 @@ def get_movie_reviews_with_sentiment(movie_imdb_id):
 def movie_recommender_engine(movie_name, n_top_recommendations=10):
     movie_name = movie_name.strip().lower()
     if movie_name not in data["movie_title"].unique():
-        return json.dumps(
-            {
-                "error": "Sorry! Movie is not in our database. Please check the spelling or try with another movie name"
-            },
-            default=convert,
-        )
-    else:
-        index = data.loc[data["movie_title"] == movie_name].index[0]
-        matrix = list(enumerate(similarity_matrix[index]))
-        matrix = sorted(matrix, key=lambda x: x[1], reverse=True)
-        recommended_indexes = [
-            index for (index, similarity) in matrix[0: n_top_recommendations + 1]
-        ]
-        recommended_movies = {"recommendations": []}
-        rank = 1
-        for i, index in enumerate(recommended_indexes):
-            r_movie_name = data["movie_title"][index]
-            try:
-                movie_data = movie_search_engine(r_movie_name)
-                recommended_movies["recommendations"].append(movie_data)
-                if i != 0:
-                    recommended_movies["recommendations"][-1]["rank"] = rank
-                    rank += 1
-            except:
-                pass
-        recommended_movies["input_movie"] = recommended_movies["recommendations"][0]
-        recommended_movies["recommendations"] = recommended_movies["recommendations"][
-            1:
-        ]
+        temp = difflib.get_close_matches(
+            movie_name, list(data.movie_title.values))
+        if temp != []:
+            word_similarity = get_word_similarity(movie_name, temp[0])
+            if word_similarity > 75:
+                movie_name = temp[0]
+            else:
+                return json.dumps(
+                    {
+                        "error": "Sorry! Movie is not in our database. Please check the spelling or try with another movie name"
+                    },
+                    default=convert,
+                )
+        else:
+            return json.dumps(
+                {
+                    "error": "Sorry! Movie is not in our database. Please check the spelling or try with another movie name"
+                },
+                default=convert,
+            )
+    index = data.loc[data["movie_title"] == movie_name].index[0]
+    matrix = list(enumerate(similarity_matrix[index]))
+    matrix = sorted(matrix, key=lambda x: x[1], reverse=True)
+    recommended_indexes = [
+        index for (index, similarity) in matrix[0: n_top_recommendations + 1]
+    ]
+    recommended_movies = {"recommendations": []}
+    rank = 1
+    for i, index in enumerate(recommended_indexes):
+        r_movie_name = data["movie_title"][index]
+        try:
+            movie_data = movie_search_engine(r_movie_name)
+            recommended_movies["recommendations"].append(movie_data)
+            if i != 0:
+                recommended_movies["recommendations"][-1]["rank"] = rank
+                rank += 1
+        except:
+            pass
+    recommended_movies["input_movie"] = recommended_movies["recommendations"][0]
+    recommended_movies["recommendations"] = recommended_movies["recommendations"][
+        1:
+    ]
 
-        recommended_movies = json.dumps(recommended_movies, default=convert)
-        return recommended_movies
+    recommended_movies = json.dumps(recommended_movies, default=convert)
+    return recommended_movies
 
 
 @app.route("/recommend_movie", methods=["POST", "GET"])
